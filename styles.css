@@ -1,11 +1,12 @@
-:root {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
-.container > div,
-.container > form {
-  border: solid 1px green;
+@font-face {
+  font-family: Norse;
+  src: url("/fonts/Norse-Bold.otf");
 }
 
 .container {
@@ -19,27 +20,137 @@
     "hero sign-up";
 }
 .hero {
-  background-image: url();
+  background-image: url("/images/heroimg.jpg");
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
   grid-area: hero;
 }
-.text {
+.header {
+  height: 17vh;
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+  margin-top: 200px;
+  padding: 15px 0 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#my-form {
+  box-shadow: 0 4px 9px rgba(187, 187, 187, 0.4);
+}
+
+.header .title {
+  font-family: Norse;
+  color: white;
+  font-size: 9rem;
+  align-self: center;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
   grid-area: info-text;
+  font-weight: 600;
+  font-size: 1.9rem;
+}
+.text1 {
+  width: 750px;
+  margin: 80px 0 0 120px;
+}
+.text2 {
+  width: 750px;
+  margin: 50px 0 80px 120px;
 }
 .form {
   grid-area: form;
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+  justify-content: center;
 }
+.form-header {
+  font-size: 1.6rem;
+}
+.form-row {
+  display: flex;
+  flex-direction: row;
+  margin-left: 120px;
+  gap: 8rem;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+}
+.col input {
+  font-size: 1.2rem;
+  padding: 0.4rem;
+  width: 20rem;
+  border-radius: 4px;
+  outline: none;
+  border: 1px rgba(0, 0, 0, 0.212) solid;
+}
+
+.col input:focus {
+  border: 1px rgb(61, 61, 240) solid;
+  box-shadow: 0 0 5pt 2pt #d3d3d3;
+}
+.col label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgb(97, 96, 96);
+  margin-bottom: 2px;
+  letter-spacing: 0.1rem;
+}
+
 .sign-up {
   grid-area: sign-up;
 }
+.sign-up-container {
+  display: flex;
+  flex-direction: column;
+  margin: 80px 0 0 120px;
+}
+.sign-up button {
+  width: 270px;
+  height: 65px;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  background-color: #596d48;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  box-shadow: 0 0 5pt 2pt #d3d3d3;
+}
+.sign-up button:hover {
+  background-color: #78866c;
+  cursor: pointer;
+  box-shadow: 0 0 7pt 4pt #d4d4d4;
+}
 
+.sign-up .login-text {
+  margin-top: 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.sign-up #login-link {
+  color: #596d48;
+  text-decoration: none;
+}
+.sign-up #login-link:visited {
+  color: #596d48;
+}
 @media only screen and (max-width: 550px) {
   .container {
     height: 100vh;
-    grid-template-columns: 0.6fr 1fr;
-    grid-template-rows: 0.5fr 1.5fr 0.6fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr 1.2fr 0.8fr;
     grid-template-areas:
-      "hero text"
-      "form form"
-      "sign-up sign-up";
+      "hero"
+      "info-text"
+      "form"
+      "sign-up";
   }
 }
