@@ -1,0 +1,45 @@
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container > div,
+.container > form {
+  border: solid 1px green;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "hero info-text"
+    "hero form"
+    "hero sign-up";
+}
+.hero {
+  background-image: url();
+  grid-area: hero;
+}
+.text {
+  grid-area: info-text;
+}
+.form {
+  grid-area: form;
+}
+.sign-up {
+  grid-area: sign-up;
+}
+
+@media only screen and (max-width: 550px) {
+  .container {
+    height: 100vh;
+    grid-template-columns: 0.6fr 1fr;
+    grid-template-rows: 0.5fr 1.5fr 0.6fr;
+    grid-template-areas:
+      "hero text"
+      "form form"
+      "sign-up sign-up";
+  }
+}
